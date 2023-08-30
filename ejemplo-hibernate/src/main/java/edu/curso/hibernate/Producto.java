@@ -17,6 +17,18 @@ public class Producto {
 	@Column(name = "descripcionCompleta")
 	private String descripcion;
 	
+	@ManyToOne
+	private CategoriaProducto categoriaProducto;
+	
+	
+	public CategoriaProducto getCategoriaProducto() {
+		return categoriaProducto;
+	}
+	
+	public void setCategoriaProducto(CategoriaProducto categoriaProducto) {
+		this.categoriaProducto = categoriaProducto;
+	}
+	
 	public Long getId() {
 		return id;
 	}
