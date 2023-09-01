@@ -12,7 +12,7 @@ public class Principal {
 		Session session = HibernateUtil.getSessionFactory().openSession(); //FALTA EL RESTO DEL CODIGO PARA RECUPERAR UN SESSION
 		Transaction transaction = session.beginTransaction();
 
-		CategoriaProducto categoriaProducto1 = new CategoriaProducto();
+		/*CategoriaProducto categoriaProducto1 = new CategoriaProducto();
 		categoriaProducto1.setNombre("general");
 		session.save(categoriaProducto1);
 		
@@ -44,15 +44,19 @@ public class Principal {
 		session.save(sucursal1);
 		
 		producto1.getSucursales().add(sucursal1);
-		session.update(producto1);
+		session.update(producto1);*/
 
 		
-		/*Long idBuscar = 2L; //EJEMPLO DE COMO RECUPERAR!!!!
+		/*Long idBuscar = 10L; //EJEMPLO DE COMO RECUPERAR!!!!
 		Producto productoBuscar = session.load(Producto.class, idBuscar);
 		System.out.println("Nombre: " + productoBuscar.getNombre());
-		System.out.println("Desc: " + productoBuscar.getDescripcion());*/
-		//System.out.println("Categoria: " + productoBuscar.getCategoriaProducto().getNombre());
+		System.out.println("Desc: " + productoBuscar.getDescripcion());
+		System.out.println("Categoria: " + productoBuscar.getCategoriaProducto().getNombre());
 
+		List<Fabricante> fabricantes = productoBuscar.getFabricantes();
+		for (Fabricante fabricante : fabricantes) {
+			System.out.println("Fabricante: " + fabricante.getNombre());
+		
 		//System.out.println("Precio: " + productoBuscar.getPrecio());
 		
 		/*
