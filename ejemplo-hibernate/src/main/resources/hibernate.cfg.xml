@@ -22,6 +22,8 @@
   	<!-- ES PARA HACER EL MAPPING -->    
     <mapping class="edu.curso.hibernate.Producto" />
     <mapping class="edu.curso.hibernate.CategoriaProducto" />
+    <mapping class="edu.curso.hibernate.Fabricante" />
+    
      
 </session-factory>
 </hibernate-configuration>

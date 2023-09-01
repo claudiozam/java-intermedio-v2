@@ -1,20 +1,15 @@
 package edu.curso.hibernate;
 
-import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
-public class CategoriaProducto {
+public class Fabricante {
 
-	
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	
-	@Column(length = 400)
 	private String nombre;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -31,7 +26,5 @@ public class CategoriaProducto {
 		this.nombre = nombre;
 	}
 
-
-	
 	
 }

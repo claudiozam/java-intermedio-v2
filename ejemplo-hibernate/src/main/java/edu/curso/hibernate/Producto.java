@@ -2,7 +2,7 @@ package edu.curso.hibernate;
 
 import javax.persistence.*;
 
-
+import java.util.*;
 
 @Entity
 @Table(name = "productos") //ESTO ES OPCIONAL
@@ -14,20 +14,29 @@ public class Producto {
 	private String nombre;
 	private Double precio;
 	
-	@Column(name = "descripcionCompleta")
-	private String descripcion;
+	@OneToMany
+	private List<Fabricante> fabricantes = new ArrayList<Fabricante>();
 	
-	@ManyToOne
+	public List<Fabricante> getFabricantes() {
+		return fabricantes;
+	}
+	public void setFabricantes(List<Fabricante> fabricantes) {
+		this.fabricantes = fabricantes;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
 	private CategoriaProducto categoriaProducto;
-	
 	
 	public CategoriaProducto getCategoriaProducto() {
 		return categoriaProducto;
 	}
-	
 	public void setCategoriaProducto(CategoriaProducto categoriaProducto) {
 		this.categoriaProducto = categoriaProducto;
 	}
+	
+	@Column(name = "descripcionCompleta")
+	private String descripcion;
+	
 	
 	public Long getId() {
 		return id;
