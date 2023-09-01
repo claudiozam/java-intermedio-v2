@@ -14,6 +14,16 @@ public class Producto {
 	private String nombre;
 	private Double precio;
 	
+	@ManyToMany
+	private List<Sucursal> sucursales = new ArrayList<Sucursal>();
+	
+	public List<Sucursal> getSucursales() {
+		return sucursales;
+	}
+	public void setSucursales(List<Sucursal> sucursales) {
+		this.sucursales = sucursales;
+	}
+
 	@OneToMany
 	private List<Fabricante> fabricantes = new ArrayList<Fabricante>();
 	

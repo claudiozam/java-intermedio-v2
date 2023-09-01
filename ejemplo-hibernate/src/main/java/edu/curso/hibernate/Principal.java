@@ -38,6 +38,13 @@ public class Principal {
 		producto1.getFabricantes().add(fabricante2);
 		session.update(producto1);
 		
+		
+		Sucursal sucursal1 = new Sucursal();
+		sucursal1.setNombre("sucursal1");
+		session.save(sucursal1);
+		
+		producto1.getSucursales().add(sucursal1);
+		session.update(producto1);
 
 		
 		/*Long idBuscar = 2L; //EJEMPLO DE COMO RECUPERAR!!!!

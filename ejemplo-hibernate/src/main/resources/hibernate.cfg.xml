@@ -23,7 +23,7 @@
     <mapping class="edu.curso.hibernate.Producto" />
     <mapping class="edu.curso.hibernate.CategoriaProducto" />
     <mapping class="edu.curso.hibernate.Fabricante" />
-    
+    <mapping class="edu.curso.hibernate.Sucursal" />
      
 </session-factory>
 </hibernate-configuration>
