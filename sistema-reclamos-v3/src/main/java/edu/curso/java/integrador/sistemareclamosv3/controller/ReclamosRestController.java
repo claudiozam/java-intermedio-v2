@@ -1,8 +1,12 @@
 package edu.curso.java.integrador.sistemareclamosv3.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,7 +43,29 @@ public class ReclamosRestController {
 		return reclamoDTO;
 	}
 	
+	@PostMapping //URL FINAL ES: /api/reclamos
+	public ReclamoDTO altaDeNuevoReclamo(@RequestBody ReclamoDTO reclamoDTO) {
+		Reclamo reclamo = new Reclamo();
+		reclamo.setTitulo(reclamoDTO.getTitulo());
+		reclamo.setDescripcion(reclamoDTO.getDescripcion());
+		Long idNuevoReclamo = reclamoService.altaDeNuevoReclamo(reclamo);
+		reclamoDTO.setId(idNuevoReclamo);
+		return reclamoDTO;
+	}
 	
 	
+	@DeleteMapping(path = "/{id}") //URL FINAL ES: /api/reclamos/123456
+	public void borarReclamoPorId(@PathVariable Long id) {
+		reclamoService.borrarReclamo(id);	
+	}
+	
+	@PutMapping(path = "/{id}") //URL FINAL ES: /api/reclamos/123456
+	public ReclamoDTO altaDeNuevoReclamo(@PathVariable Long id, @RequestBody ReclamoDTO reclamoDTO) {
+		Reclamo reclamo = reclamoService.buscarReclamoPorId(id);
+		reclamo.setTitulo(reclamoDTO.getTitulo());
+		reclamo.setDescripcion(reclamoDTO.getDescripcion());
+		reclamoService.actualizarReclamo(reclamo);
+		return reclamoDTO;
+	}
 	
 }
