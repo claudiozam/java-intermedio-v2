@@ -1,5 +1,7 @@
 package edu.curso.java.integrador.sistemareclamosv3.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,14 @@ public class ReclamosController {
 	
 	@Autowired
 	private ReclamoService reclamoService;
+	
+	
+	@RequestMapping(value = "/listar") //URL FINAL /reclamos/listar
+	public String listarReclamos(Model model) {
+		List<Reclamo> reclamos = reclamoService.recuperarTodosLosReclamos();
+		model.addAttribute("reclamos", reclamos);
+		return "/reclamos/listar";
+	}
 	
 	@RequestMapping(value = "/{id}") //URL FINAL /reclamos/1233434543645
 	public String verReclamo(Model model,@PathVariable  Long id) {
