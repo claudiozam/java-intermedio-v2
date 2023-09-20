@@ -48,10 +48,10 @@ public class SistemaReclamosV3Application implements CommandLineRunner {
 		
 		//System.out.println("Id generado del nuevo reclamo: " + idGenerado);
 		
-		List<Reclamo> reclamos = reclamoService.recuperarTodosLosReclamos();
-		for (Reclamo reclamo : reclamos) {
-			System.out.println("Reclamo: " + reclamo.getTitulo());
-		}
+		//List<Reclamo> reclamos = reclamoService.recuperarTodosLosReclamos();
+		//for (Reclamo reclamo : reclamos) {
+		//	System.out.println("Reclamo: " + reclamo.getTitulo());
+		//}
 		
 	}
 
