@@ -33,4 +33,11 @@ public class ReclamosController {
 		return "/reclamos/ver";
 	}
 
+	@RequestMapping(value = "/borrar/{id}") //URL FINAL /reclamos/borrar/1233434543645
+	public String borrarReclamo(Model model,@PathVariable  Long id) {
+		reclamoService.borrarReclamo(id);
+		return "redirect:/reclamos/listar";
+	}
+
+	
 }

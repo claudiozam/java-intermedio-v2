@@ -5,7 +5,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script src="../js/jquery-3.7.1.js"></script>
 		<script src="../js/bootstrap.js"></script>
+		<script src="../js/bootbox.all.js"></script>
+		
+		
 		<link rel="stylesheet" href="../css/bootstrap.css">
 		<link rel="stylesheet" href="../css/general.css">
 	</head>

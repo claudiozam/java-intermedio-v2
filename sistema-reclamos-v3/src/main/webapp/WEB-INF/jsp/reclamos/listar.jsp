@@ -23,7 +23,11 @@
 			<td>${r.id}</td>
 			<td>${r.titulo}</td>
 			<td>${r.descripcion}</td>
-			<td></td>
+			<td>
+				<a class="btn btn-primary" href="/reclamos/${r.id}">Ver</a>
+				<a class="btn btn-warning" href="/reclamos/editar/${r.id}">Editar</a>
+				<a class="btn btn-danger" href="/reclamos/borrar/${r.id}">Borrar</a>
+			</td>
 		</tr>
 		</c:forEach>
 	</tbody>
