@@ -23,10 +23,10 @@
 		    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="#">Listado de reclamos</a>
+		          <a class="nav-link active" aria-current="page" href="/reclamos/listar">Listado de reclamos</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link" href="#">Nuevo reclamos</a>
+		          <a class="nav-link" href="/reclamos/nuevo">Nuevo reclamos</a>
 		        </li>
 		      </ul>
 		    </div>

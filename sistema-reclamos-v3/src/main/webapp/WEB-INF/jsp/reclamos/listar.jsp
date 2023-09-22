@@ -25,7 +25,7 @@
 			<td>${r.descripcion}</td>
 			<td>
 				<a class="btn btn-primary" href="/reclamos/${r.id}">Ver</a>
-				<a class="btn btn-warning" href="/reclamos/editar/${r.id}">Editar</a>
+				<a class="btn btn-warning" href="/reclamos/${r.id}/editar">Editar</a>
 				<a class="btn btn-danger" onclick="borrarReclamo(${r.id})" href="#">Borrar</a>
 			</td>
 		</tr>

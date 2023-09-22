@@ -47,7 +47,7 @@ public class ReclamosController {
 		return "/reclamos/form";
 	}
 
-	@RequestMapping(value = "/editar/{id}")
+	@RequestMapping(value = "/{id}/editar")
 	public String editarReclamo(Model model, @PathVariable  Long id) {
 		Reclamo reclamo = reclamoService.buscarReclamoPorId(id);
 		ReclamoForm reclamoForm = new ReclamoForm();
@@ -55,7 +55,7 @@ public class ReclamosController {
 		reclamoForm.setTitulo(reclamo.getTitulo());
 		reclamoForm.setDescripcion(reclamo.getDescripcion());
 		model.addAttribute("reclamoForm", reclamoForm);
-		return null;
+		return "/reclamos/form";
 	}
 
 	@RequestMapping(value = "/guardar", method = RequestMethod.POST)
