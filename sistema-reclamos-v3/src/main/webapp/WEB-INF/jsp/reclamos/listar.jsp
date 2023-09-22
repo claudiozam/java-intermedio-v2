@@ -26,11 +26,21 @@
 			<td>
 				<a class="btn btn-primary" href="/reclamos/${r.id}">Ver</a>
 				<a class="btn btn-warning" href="/reclamos/editar/${r.id}">Editar</a>
-				<a class="btn btn-danger" href="/reclamos/borrar/${r.id}">Borrar</a>
+				<a class="btn btn-danger" onclick="borrarReclamo(${r.id})" href="#">Borrar</a>
 			</td>
 		</tr>
 		</c:forEach>
 	</tbody>
 </table>
+
+<script>
+	function borrarReclamo(idReclamo) {
+		bootbox.confirm('Seguro que queres borrar el reclamo ' + idReclamo, function(result) {
+        	if(result == true) {
+        		alert('Listo lo borramos......');
+        	}
+		});
+	}
+</script>
 
 <jsp:include page="../template_inferior.jsp"></jsp:include>
