@@ -37,7 +37,7 @@
 	function borrarReclamo(idReclamo) {
 		bootbox.confirm('Seguro que queres borrar el reclamo ' + idReclamo, function(result) {
         	if(result == true) {
-        		alert('Listo lo borramos......');
+        		window.location = '/reclamos/borrar/' + idReclamo;
         	}
 		});
 	}
