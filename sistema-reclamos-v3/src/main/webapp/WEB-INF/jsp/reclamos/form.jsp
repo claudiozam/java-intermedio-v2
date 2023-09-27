@@ -27,14 +27,29 @@
 			</div>
 		
 		
-			<button class="btn btn-primary" type="submit">Enviar</button>
+			<button class="btn btn-primary" id="buttonEnviar" type="button">Enviar</button>
+			<button class="btn btn-warning" id="buttonCancelar" type="button">Cancelar</button>
+
 		</div>
 	</div>
 	
 	<script>
 		$(document).ready(function() {
 			console.log('Listo termino de cargar todo el html de la pagina....');
-			$('#formReclamo').validate();
+			
+			
+			$('#buttonEnviar').on('click', function() {
+				if($('#formReclamo').valid() == true) {
+					$('#formReclamo').submit();
+				} else {
+					bootbox.alert('For favor completar los campos que faltan....');
+				}
+			});
+			
+			$('#buttonCancelar').on('click', function() {
+				history.back();
+			});
+		
 			
 		});
 	</script>
